@@ -23,7 +23,7 @@ def register():
         h.update(password)
         hash = h.hexdigest()
         user = User(FirstName=form.FirstName.data, MiddleName=form.MiddleName.data, LastName=form.LastName.data,
-                    DOB=form.DOB.data, UserEmail=form.UserEmail.data, PhoneNo=form.PhoneNo.data, password=hash)
+                    DOB=form.DOB.data, UserEmail=form.UserEmail.data, PhoneNo=form.PhoneNo.data, Education=form.Education.data, password=hash)
         db.session.add(user)
         db.session.commit()
         flash('Account has been created. You can login now!!', 'success')

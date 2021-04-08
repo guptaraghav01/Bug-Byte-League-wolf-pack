@@ -15,8 +15,9 @@ class User(db.Model, UserMixin):
     LastName = db.Column(db.String(40), nullable=False)
     DOB = db.Column(db.String(20), nullable=False)
     UserEmail = db.Column(db.String(120), unique=True, nullable=False)
+    Education = db.Column(db.String(120), nullable=False)
     PhoneNo = db.Column(db.String(20), nullable=False)
     password = db.Column(db.String(60), nullable=False)
 
     def __repr__(self):
-        return f"User('{self.id}', '{self.CreatedOn}', '{self.ModifiedOn}', '{self.FirstName}', '{self.MiddleName}', '{self.LastName}', '{self.DOB}', '{self.UserEmail}', '{self.PhoneNo}', '{self.password}')"
+        return f"User('{self.id}', '{self.CreatedOn}', '{self.ModifiedOn}', '{self.FirstName}', '{self.MiddleName}', '{self.LastName}', '{self.Education}', '{self.DOB}', '{self.UserEmail}', '{self.PhoneNo}', '{self.password}')"
