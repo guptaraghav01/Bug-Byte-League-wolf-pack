@@ -11,9 +11,13 @@ from hashlib import sha256
 def home():
     return render_template('home.html')
 
-@app.route("/about")
-def home():
-    return render_template('aboutus.html')
+
+assert isinstance(app.route, object)
+
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
 
 
 @app.route("/register", methods=['GET', 'POST'])
@@ -27,7 +31,8 @@ def register():
         h.update(password)
         hash = h.hexdigest()
         user = User(FirstName=form.FirstName.data, MiddleName=form.MiddleName.data, LastName=form.LastName.data,
-                    DOB=form.DOB.data, UserEmail=form.UserEmail.data, PhoneNo=form.PhoneNo.data, Education=form.Education.data, password=hash)
+                    DOB=form.DOB.data, UserEmail=form.UserEmail.data, PhoneNo=form.PhoneNo.data,
+                    Education=form.Education.data, password=hash)
         db.session.add(user)
         db.session.commit()
         flash('Account has been created. You can login now!!', 'success')
@@ -61,7 +66,7 @@ def logout():
     return redirect(url_for('home'))
 
 
-@app.route("/account", methods=['GET','POST'])
+@app.route("/account", methods=['GET', 'POST'])
 @login_required
 def account():
     form = UpdateAccountForm()
