@@ -15,7 +15,7 @@ class RegistrationForm(FlaskForm):
                            validators=[DataRequired(), Email()])
     PhoneNo = StringField('Phone Number',
                            validators=[DataRequired(), Length(min=2, max=20)])
-    Education = StringField('Education Background',
+    Education = StringField('Name of School/College/Company',
                            validators=[DataRequired(), Length(min=2, max=60)])
     password = PasswordField('Password', validators=[DataRequired(), Length(min=6, max=20)])
     confirm_password = PasswordField('Confirm Password',
@@ -46,7 +46,7 @@ class UpdateAccountForm(FlaskForm):
     UserEmail = StringField('E-Mail')
     PhoneNo = StringField('Phone Number',
                            validators=[Length(min=2, max=20)])
-    Education = StringField('Education Background',
+    Education = StringField('Name of School/College/Company',
                            validators=[Length(min=2, max=60)])
     submit = SubmitField('Save Changes')
 
