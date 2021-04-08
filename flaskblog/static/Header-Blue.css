@@ -197,7 +197,7 @@
   border-radius: 20px;
   background-color: #aaa;
   overflow: hidden;
-  background: url(../../assets/img/screen-content-phone.jpg);
+  background: url(screen-content-phone.jpg);
   background-size: cover;
   background-position: center;
   z-index: -1;
@@ -213,5 +213,20 @@
   right: -60%;
   transform: rotate(-19deg);
   opacity: 0.2;
+}
+
+.logo {
+  text-align: center;
+}
+
+.know_hindi {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.tut {
+  text-align: center;
+  margin-top: 25px;
+  margin-bottom: 60px;
 }
 
