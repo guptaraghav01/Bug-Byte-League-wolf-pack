@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Header-Blue.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 
     {% if title %}
         <title>Bug-Byte-League - {{ title }}</title>
@@ -27,7 +31,7 @@
           <div class="collapse navbar-collapse" id="navbarToggle">
             <div class="navbar-nav mr-auto">
               <a class="nav-item nav-link" href="{{ url_for('home') }}">Home</a>
-              <a class="nav-item nav-link" href="#">About</a>
+              <a class="nav-item nav-link" href="{{ url_for('aboutus') }}">About</a>
             </div>
             <!-- Navbar Right Side -->
             <div class="navbar-nav">

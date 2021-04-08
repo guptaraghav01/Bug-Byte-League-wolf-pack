@@ -11,6 +11,10 @@ from hashlib import sha256
 def home():
     return render_template('home.html')
 
+@app.route("/about")
+def home():
+    return render_template('aboutus.html')
+
 
 @app.route("/register", methods=['GET', 'POST'])
 def register():
