@@ -20,10 +20,6 @@ def about():
     return render_template('about.html')
 
 
-@app.route('/topics')
-def topics():
-    return render_template('topics.html')
-
 @app.route("/register", methods=['GET', 'POST'])
 def register():
     if current_user.is_authenticated:
