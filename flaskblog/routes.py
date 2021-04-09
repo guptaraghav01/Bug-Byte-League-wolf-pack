@@ -32,6 +32,7 @@ def register():
         hash = h.hexdigest()
         user = User(FirstName=form.FirstName.data, MiddleName=form.MiddleName.data, LastName=form.LastName.data,
                     DOB=form.DOB.data, UserEmail=form.UserEmail.data, PhoneNo=form.PhoneNo.data,
+                    type=form.type.data,
                     Education=form.Education.data, password=hash)
         db.session.add(user)
         db.session.commit()
