@@ -15,6 +15,7 @@ class User(db.Model, UserMixin):
     LastName = db.Column(db.String(40), nullable=False)
     DOB = db.Column(db.String(20), nullable=False)
     UserEmail = db.Column(db.String(120), unique=True, nullable=False)
+    type = db.Column(db.String(120), nullable=False)
     Education = db.Column(db.String(120), nullable=False)
     PhoneNo = db.Column(db.String(20), nullable=False)
     password = db.Column(db.String(60), nullable=False)

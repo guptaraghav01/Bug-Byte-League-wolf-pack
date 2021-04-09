@@ -17,6 +17,8 @@ class RegistrationForm(FlaskForm):
                            validators=[DataRequired(), Length(min=2, max=20)])
     Education = StringField('Name of School/College/Company',
                            validators=[DataRequired(), Length(min=2, max=60)])
+    type = StringField('You are here as: (Student/Professional)',
+                            validators=[DataRequired(), Length(min=2, max=60)])
     password = PasswordField('Password', validators=[DataRequired(), Length(min=6, max=20)])
     confirm_password = PasswordField('Confirm Password',
                                      validators=[DataRequired(), EqualTo('password')])
