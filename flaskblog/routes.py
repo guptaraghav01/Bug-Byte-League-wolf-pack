@@ -20,6 +20,14 @@ def about():
     return render_template('about.html')
 
 
+@app.route('/topics')
+def topics():
+    return render_template('topics.html')
+
+@app.route("/question")
+def question():
+    return render_template('question.html')
+
 @app.route("/register", methods=['GET', 'POST'])
 def register():
     if current_user.is_authenticated:
@@ -31,8 +39,7 @@ def register():
         h.update(password)
         hash = h.hexdigest()
         user = User(FirstName=form.FirstName.data, MiddleName=form.MiddleName.data, LastName=form.LastName.data,
-                    DOB=form.DOB.data, UserEmail=form.UserEmail.data, PhoneNo=form.PhoneNo.data,
-                    type=form.type.data,
+                    DOB=form.DOB.data, UserEmail=form.UserEmail.data, type=form.type.data,  PhoneNo=form.PhoneNo.data,
                     Education=form.Education.data, password=hash)
         db.session.add(user)
         db.session.commit()
